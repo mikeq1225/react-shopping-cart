@@ -1,0 +1,109 @@
+.products {
+  width: 1000px;
+  margin: auto;
+}
+
+.productContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-content: center;
+  justify-content: center;
+  grid-row-gap: 30px;
+}
+
+.items {
+  border: 1px solid transparent;
+  position: relative;
+  padding: 10px;
+}
+
+.items:hover {
+  border: 1px solid lightgrey;
+}
+
+.items:hover > button.addToCartButton {
+  background-color: rgb(234, 191, 0);
+}
+
+.freeShip {
+  background-color: black;
+  color: white;
+  padding: 4px 6px;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 12px;
+}
+
+.blank {
+  display: none;
+}
+
+.items img {
+  width: 250px;
+}
+
+.price,
+.title {
+  text-align: center;
+  margin: 12px 0px 0px 0px;
+}
+
+.install {
+  color: darkgrey;
+  margin: 0px 0px 8px 0px;
+  text-align: center;
+}
+
+p.dash {
+  margin: 0;
+  text-align: center;
+}
+
+.dash svg {
+  color: rgb(234, 191, 0);
+  font-size: 40px;
+  margin: -8px;
+}
+
+.productContainer div button {
+  color: white;
+  width: 100%;
+  background-color: black;
+  height: 50px;
+}
+
+/* sTyling for cart window */
+/* .cartParent {
+}
+
+.cartWindow {
+  background-color: black;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 30%;
+  transition: width 5s;
+}
+
+.cartButton:hover > div.cartWindow {
+  width: 40%;
+  background-color: red;
+}
+
+.cartButton {
+  background-color: black;
+  color: white;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cartButton svg {
+  font-size: 25px;
+} */
