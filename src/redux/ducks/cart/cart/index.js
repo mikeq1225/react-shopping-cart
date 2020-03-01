@@ -24,7 +24,7 @@ export default (state = initialState, action) => {
 }
 
 // 5. action creators
-function addToCart(product) {
+function addToCart() {
   return {
     type: ADD_CART,
     payload: product
@@ -33,23 +33,23 @@ function addToCart(product) {
 
 function deleteItem(productId) {
   return {
-    type: DEL_CART,
+    type: DELETE_ITEM,
     payload: productId
   }
 }
 
-// function toggleClass() {
-//   const [cartWindow, setCartWindow] = useState(false)
-//   return (
-//     <div className={cartWindow ? "cartWindow" : "hidden"}>
-//       <button className="cartButton" onClick={() => setCartWindow(!cartWindow)}>
-//         <TiShoppingCart />
-//       </button>
-//       <img src="/assets/100_2.jpg" alt="t-shirt" />
-//       <h1>Hello World 1</h1>
-//     </div>
-//   )
-// }
+function toggleClass() {
+  const [cartWindow, setCartWindow] = useState(false)
+  return (
+    <div className={cartWindow ? "cartWindow" : "hidden"}>
+      <button className="cartButton" onClick={() => setCartWindow(!cartWindow)}>
+        <TiShoppingCart />
+      </button>
+      <img src="/assets/100_2.jpg" alt="t-shirt" />
+      <h1>Hello World 1</h1>
+    </div>
+  )
+}
 
 // 6. custom hook
 export function useCart() {
@@ -57,9 +57,6 @@ export function useCart() {
   const cart = useSelector(appState => appState.cartState.cart)
   const add = product => dispatch(addToCart(product))
   const del = item => dispatch(deleteItem(item))
-
-  // const syncaction = dispatch(someSyncAction())
-  // const asyncaction = dispatch(someAsyncAction())
 
   useEffect(() => {}, [dispatch])
 
