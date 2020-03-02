@@ -80,6 +80,11 @@ p.dash {
 }
 
 /* sTyling for cart window */
+.cartContainer {
+  max-height: 67%;
+  overflow: scroll;
+}
+
 .cartButton {
   background-color: rgb(26, 27, 32);
   color: white;
@@ -90,6 +95,7 @@ p.dash {
   top: 0px;
   left: -60px;
   border: none;
+  outline: none;
 }
 
 .cartButton svg {
@@ -99,23 +105,37 @@ p.dash {
 .hidden {
   width: 0px;
   background-color: rgb(26, 27, 32);
-  z-index: 10;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  transition: width 1s;
+  transition: width 0.7s;
+}
+
+.cartHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartIcon {
+  font-size: 40px;
+  color: white;
+}
+
+.cartHeader h1 {
+  color: white;
+  padding-left: 10px;
 }
 
 .cartWindow {
   background-color: rgb(26, 27, 32);
-  z-index: 10;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 40%;
-  transition: width 1s;
+  width: 35%;
+  transition: width 0.7s;
   padding: 40px 10px 0px 10px;
 }
 
@@ -123,7 +143,8 @@ p.dash {
   display: grid;
   grid-template-columns: 60px auto 90px;
   border-top: 1px solid black;
-  margin: 5px 0px;
+  padding: 20px;
+  align-items: center;
 }
 
 .cartItem img {
@@ -131,11 +152,7 @@ p.dash {
 }
 
 .titleDiv {
-  /* margin: 10px 0px 0px 10px; */
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: flex-start;
+  padding-left: 15px;
 }
 
 .cartTitle {
@@ -173,6 +190,62 @@ p.dash {
   color: white;
 }
 
-.deleteButton:hover > p.cartPrice {
-  text-decoration: line-through;
+.quantityButton {
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
+
+.subCheckDiv {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgb(26, 27, 32);
+}
+
+.subTotal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0px;
+}
+
+.subTotal h3 {
+  color: rgb(90, 90, 90);
+  margin: 0 15px;
+  font-size: 22px;
+}
+
+.subTotal p {
+  padding: 0;
+  margin: 0 15px;
+}
+
+.checkoutDiv {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.checkout {
+  color: white;
+  background-color: rgb(15, 15, 15);
+  width: 85%;
+  font-size: 22px;
+  border: none;
+  padding: 14px 0px;
+  margin: 0px 0px 10px 0px;
+  text-transform: uppercase;
+}
+
+a,
+a button {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* .deleteButton:hover > p.cartPrice {
+  text-decoration: line-through;
+} */

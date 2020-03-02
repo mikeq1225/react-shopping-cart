@@ -54,6 +54,7 @@ export function useProducts() {
   const dispatch = useDispatch()
   const products = useSelector(appState => appState.productState.products)
   const count = useSelector(appState => appState.productState.count)
+
   // const syncaction = dispatch(someSyncAction())
   // const asyncaction = dispatch(someAsyncAction())
 

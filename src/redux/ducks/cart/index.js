@@ -1,5 +1,5 @@
 // 1. imports
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
 // 2. action definitions
@@ -31,25 +31,12 @@ function addToCart(product) {
   }
 }
 
-function deleteItem(productId) {
+function deleteItem(item) {
   return {
     type: DEL_CART,
-    payload: productId
+    payload: item
   }
 }
-
-// function toggleClass() {
-//   const [cartWindow, setCartWindow] = useState(false)
-//   return (
-//     <div className={cartWindow ? "cartWindow" : "hidden"}>
-//       <button className="cartButton" onClick={() => setCartWindow(!cartWindow)}>
-//         <TiShoppingCart />
-//       </button>
-//       <img src="/assets/100_2.jpg" alt="t-shirt" />
-//       <h1>Hello World 1</h1>
-//     </div>
-//   )
-// }
 
 // 6. custom hook
 export function useCart() {
@@ -57,11 +44,11 @@ export function useCart() {
   const cart = useSelector(appState => appState.cartState.cart)
   const add = product => dispatch(addToCart(product))
   const del = item => dispatch(deleteItem(item))
-
-  // const syncaction = dispatch(someSyncAction())
-  // const asyncaction = dispatch(someAsyncAction())
+  const total = cart.reduce((a, b) => {
+    return a + b.price
+  }, 0)
 
   useEffect(() => {}, [dispatch])
 
-  return { cart, add, del }
+  return { cart, add, del, total }
 }
