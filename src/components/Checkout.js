@@ -9,6 +9,7 @@ export default props => {
   return (
     <div className="receiptContainer">
       <h1>Receipt</h1>
+      <h3>Thank you for your order.</h3>
       <div>
         {cart.map(item => (
           <div className="receiptItem" key={"item" + item.id}>
@@ -23,7 +24,7 @@ export default props => {
           <p>Purchase Total</p>
           <p>${total.toFixed(2)}</p>
         </div>
-        <Link to={{ pathname: "/", state: {} }}>
+        <Link to={{ pathname: "/", cart: [] }}>
           <button>Return to shopping page</button>
         </Link>
       </div>

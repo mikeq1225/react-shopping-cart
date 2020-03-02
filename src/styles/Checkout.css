@@ -5,7 +5,8 @@
   padding: 20px 50px;
 }
 
-.receiptContainer h1 {
+.receiptContainer h1,
+.receiptContainer h3 {
   text-align: center;
 }
 
