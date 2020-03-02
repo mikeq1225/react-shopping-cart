@@ -1,0 +1,34 @@
+.receiptContainer {
+  width: 600px;
+  margin: auto;
+  border: 1px solid black;
+  padding: 20px 50px;
+}
+
+.receiptContainer h1 {
+  text-align: center;
+}
+
+.receiptItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.receiptTotal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px dotted black;
+}
+
+.receiptTotal2 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.receiptTotal2 p {
+  font-size: 25px;
+}

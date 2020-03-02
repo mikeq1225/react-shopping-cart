@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import { useCart } from "../hooks"
 import "../styles/Checkout.css"
 
@@ -6,27 +7,25 @@ export default props => {
   const { cart, total } = useCart()
 
   return (
-    <div>
-      <div className="cartContainer">
+    <div className="receiptContainer">
+      <h1>Receipt</h1>
+      <div>
         {cart.map(item => (
-          <div className="cartItem" key={"item" + item.id}>
-            <div className="">
-              <p className="">{item.title}</p>
-              <p className="">{item.style}</p>
-            </div>
-            <div className="">
-              <p className="">${item.price.toFixed(2)}</p>
-            </div>
+          <div className="receiptItem" key={"item" + item.id}>
+            <p>{item.sku}</p>
+            <p>{item.title}</p>
+            <p>${item.price.toFixed(2)}</p>
           </div>
         ))}
       </div>
-      <div className="">
-        <div className="">
-          <h3>Subtotal</h3>
-          <div>
-            <p className="">${total.toFixed(2)}</p>
-          </div>
+      <div className="receiptTotal">
+        <div className="receiptTotal2">
+          <p>Purchase Total</p>
+          <p>${total.toFixed(2)}</p>
         </div>
+        <Link to={{ pathname: "/", state: {} }}>
+          <button>Return to shopping page</button>
+        </Link>
       </div>
     </div>
   )

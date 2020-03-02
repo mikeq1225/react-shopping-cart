@@ -79,7 +79,7 @@ export default props => {
           </div>
           <div className="subCheckDiv">
             <div className="subTotal">
-              <h3>Subtotal</h3>
+              <h3>SUBTOTAL</h3>
               <div>
                 <p className="cartPrice">${total.toFixed(2)}</p>
                 {/* <p> or up to</p> */}
