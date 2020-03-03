@@ -7,7 +7,7 @@ import { TiShoppingCart } from "react-icons/ti"
 
 export default props => {
   const { products, count } = useProducts()
-  const { cart, add, del, total } = useCart()
+  const { cart, add, del, total, delAll } = useCart()
   const [show, setShow] = useState(false)
 
   return (
@@ -63,15 +63,26 @@ export default props => {
                 <div className="titleDiv">
                   <p className="cartTitle">{item.title}</p>
                   <p className="cartStyle">{item.style}</p>
+                  <p className="cartQuantity"> Quantity: {item.quantity}</p>
                 </div>
                 <div className="priceDiv">
-                  <button className="deleteButton" onClick={e => del(item.id)}>
+                  <button
+                    className="deleteButton"
+                    onClick={e => delAll(item.id)}
+                  >
                     x
                   </button>
                   <p className="cartPrice">${item.price.toFixed(2)}</p>
                   <div>
-                    <button className="quantityButton">-</button>
-                    <button className="quantityButton">+</button>
+                    <button
+                      className="quantityButton"
+                      onClick={e => del(item.id)}
+                    >
+                      -
+                    </button>
+                    <button className="quantityButton" onClick={e => add(item)}>
+                      +
+                    </button>
                   </div>
                 </div>
               </div>
@@ -82,10 +93,9 @@ export default props => {
               <h3>SUBTOTAL</h3>
               <div>
                 <p className="cartPrice">${total.toFixed(2)}</p>
-                {/* <p> or up to</p> */}
               </div>
             </div>
-            <Link to={{ pathname: "/checkout", data: cart }}>
+            <Link to={{ pathname: "/summary", data: cart }}>
               <div className="checkoutDiv">
                 <button className="checkout">Checkout</button>
               </div>

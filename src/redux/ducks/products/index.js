@@ -26,6 +26,7 @@ export default (state = initialState, action) => {
 }
 
 // 5. action creators
+//display all pruducts from database
 function getProducts() {
   return dispatch => {
     axios.get("/products").then(resp => {
@@ -38,6 +39,7 @@ function getProducts() {
   }
 }
 
+// set the count of items in database
 function getCount() {
   return dispatch => {
     axios.get("/products").then(resp => {
@@ -54,9 +56,6 @@ export function useProducts() {
   const dispatch = useDispatch()
   const products = useSelector(appState => appState.productState.products)
   const count = useSelector(appState => appState.productState.count)
-
-  // const syncaction = dispatch(someSyncAction())
-  // const asyncaction = dispatch(someAsyncAction())
 
   useEffect(() => {
     dispatch(getProducts())

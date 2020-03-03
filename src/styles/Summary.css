@@ -1,0 +1,84 @@
+.summaryContainer {
+  width: 900px;
+  margin: auto;
+  border: 1px solid black;
+  padding: 20px 50px;
+  background-color: rgb(26, 27, 32);
+  box-shadow: inset 0px 0px 7px 3px rgba(0, 0, 0);
+}
+
+.summaryContainer h1,
+.summaryContainer h3 {
+  text-align: center;
+  color: rgb(90, 90, 90);
+}
+
+.summaryItem {
+  display: grid;
+  grid-template-columns: 60px auto 90px;
+  border-top: 1px solid black;
+  padding: 20px;
+  align-items: center;
+}
+
+.shadow {
+  box-shadow: inset 0px 0px 7px 3px rgba(0, 0, 0);
+}
+
+.summaryItem img {
+  width: 60px;
+}
+
+.summaryDiv {
+  padding-left: 15px;
+}
+
+.summaryTitle {
+  color: white;
+  margin: 0;
+}
+
+.summaryStyle,
+.summaryQuantity {
+  color: rgb(90, 90, 90);
+  margin: 0;
+}
+
+.summaryPrice {
+  color: rgb(234, 191, 0);
+  font-size: 22px;
+  margin: 0;
+}
+
+.summaryTotal {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+
+.summaryTotal2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summaryTotal p {
+  font-size: 25px;
+  color: rgb(90, 90, 90);
+}
+
+.summaryButton {
+  color: white;
+  background-color: rgb(15, 15, 15);
+  font-size: 22px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.summaryButton:hover {
+  background-color: rgb(90, 90, 90);
+}

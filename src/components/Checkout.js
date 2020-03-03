@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "react-router-dom"
 import { useCart } from "../hooks"
 import "../styles/Checkout.css"
 
@@ -15,6 +14,7 @@ export default props => {
           <div className="receiptItem" key={"item" + item.id}>
             <p>{item.sku}</p>
             <p>{item.title}</p>
+            <p>{item.quantity} x</p>
             <p>${item.price.toFixed(2)}</p>
           </div>
         ))}
@@ -24,9 +24,6 @@ export default props => {
           <p>Purchase Total</p>
           <p>${total.toFixed(2)}</p>
         </div>
-        <Link to={{ pathname: "/", cart: [] }}>
-          <button>Return to shopping page</button>
-        </Link>
       </div>
     </div>
   )
