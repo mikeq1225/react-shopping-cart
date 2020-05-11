@@ -13,7 +13,7 @@ export default (props) => {
 				path="/"
 				render={() => <Redirect to="/react-shopping-cart" />}
 			/>
-			<Route path="/react-shopping-cart" component={Products}></Route>
+			<Route exact path="/react-shopping-cart" component={Products}></Route>
 			<Route path="/react-shopping-cart/summary" component={Summary}></Route>
 			<Route path="/react-shopping-cart/checkout" component={Checkout}></Route>
 		</div>
