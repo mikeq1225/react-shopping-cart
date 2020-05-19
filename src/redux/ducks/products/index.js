@@ -25,7 +25,7 @@ export default (state = initialState, action) => {
 	}
 }
 
-// 5. action creators
+// 5. action creator
 //display all pruducts from database
 function getProducts() {
 	return (dispatch) => {
