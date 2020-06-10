@@ -47,6 +47,7 @@ function getCount() {
 		axios
 			.get("https://api.jsonbin.io/b/5ec43ffdf7c0f67062cf6fef/1")
 			.then((resp) => {
+				console.log(resp)
 				dispatch({
 					type: SET_COUNT,
 					payload: resp.data.products.length,
